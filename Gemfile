@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
+gem 'activeadmin', '0.4.4'
+gem 'devise', '2.1.2'
+gem 'haml', '3.1.4'
+gem 'squeel', '1.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,6 +22,10 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
 
 gem 'jquery-rails'
