@@ -1,0 +1,20 @@
+defaults: &defaults
+  host: localhost
+  encoding: utf8
+  pool: 5
+  username: victor
+  adapter: postgresql
+  template: template0
+
+development:
+  <<: *defaults
+  database: inventory_development
+
+test:
+  <<: *defaults
+  database: inventory_test
+
+production:
+  <<: *defaults
+  database: inventory_production
+
