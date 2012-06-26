@@ -1,2 +1,15 @@
-%h1 Pages#home
-%p Find me in app/views/pages/home.haml
+- if user_signed_in?
+  %h2 You are logged in.
+  = link_to "Sign out", destroy_user_session_path, method: :delete
+- else
+  %h2 Sign in
+  = form_for("user", :url => user_session_path) do |f|
+    %div
+      = f.label :email
+      %br/
+      = f.email_field :email
+    %div
+      = f.label :password
+      %br/
+      = f.password_field :password
+    %div= f.submit "Sign in"
