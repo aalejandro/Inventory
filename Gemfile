@@ -26,6 +26,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'mocha', '0.11.4', require: false
 end
 
 gem 'jquery-rails'
