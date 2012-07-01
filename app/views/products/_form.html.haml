@@ -12,6 +12,6 @@
 
   .field
     = f.label :manufacturers
-    = f.collection_select :manufacturer_ids, Manufacturer.order(:name), :id, :name, {}, {multiple: true, class: "chzn-select", "data-placeholder" => "Select Manufacturers..."}
+    = f.collection_select :manufacturer_ids, Manufacturer.order(:name), :id, :name, {}, {multiple: false, class: "chzn-select", "data-placeholder" => "Select Manufacturers..."}
   .actions
     = f.submit 'Save'
