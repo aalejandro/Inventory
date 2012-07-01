@@ -1,6 +1,5 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :manufacturer_ids
-  validates_presence_of :name
 
   # Model Relationships
   has_many :manufacturer_lists, dependent: :destroy
