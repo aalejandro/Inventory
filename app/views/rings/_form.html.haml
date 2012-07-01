@@ -1,0 +1,16 @@
+= form_for @ring do |f|
+  -if @ring.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@ring.errors.count, "error")} prohibited this ring from being saved:"
+      %ul
+        - @ring.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :number
+    = f.text_field :number
+  .actions
+    = f.submit 'Save'

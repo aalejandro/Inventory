@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @ring.name
+%p
+  %b Number:
+  = @ring.number
+
+= link_to 'Edit', edit_ring_path(@ring)
+\|
+= link_to 'Back', rings_path

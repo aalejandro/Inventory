@@ -1,7 +1,4 @@
-- if user_signed_in?
-  %h2 You are logged in.
-  = link_to "Sign out", destroy_user_session_path, method: :delete
-- else
+- unless user_signed_in?
   %h2 Sign in
   = form_for("user", :url => user_session_path) do |f|
     %div

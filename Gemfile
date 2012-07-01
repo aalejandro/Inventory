@@ -25,10 +25,13 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'mocha', '0.11.4', require: false
+  gem 'annotate', git: 'git://github.com/jeremyolliver/annotate_models.git', branch: 'rake_compatibility'
+  gem 'factory_girl_rails', '3.5.0'
+  gem 'rspec-rails', '2.10.1'
+  gem 'shoulda-matchers', '1.2.0'
 end
+
+gem 'haml-rails', group: :development
 
 gem 'jquery-rails'
 
