@@ -1,7 +1,14 @@
 require 'spec_helper'
 
 describe ManufacturerList do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  let(:manufacturer) { FactoryGirl.create(:manufacturer) }
+
+  it { should respond_to(:product_id) }
+  it { should respond_to(:manufacturer_id) }
+  it { should be_kind_of ManufacturerList }
+  it { should validate_presence_of(:product_id) }
+  it { should validate_presence_of(:manufacturer_id) }
 end
 
 # == Schema Information
