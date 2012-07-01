@@ -1,5 +1,7 @@
 Inventory::Application.routes.draw do
 
+  resources :manufacturers
+
   resources :rings
 
   devise_for :users, skip: :registrations
@@ -12,8 +14,15 @@ Inventory::Application.routes.draw do
   root :to => 'pages#home'
 end
 #== Route Map
-# Generated on 30 Jun 2012 21:35
+# Generated on 01 Jul 2012 12:53
 #
+#                            POST       /manufacturers(.:format)           manufacturers#create
+#           new_manufacturer GET        /manufacturers/new(.:format)       manufacturers#new
+#          edit_manufacturer GET        /manufacturers/:id/edit(.:format)  manufacturers#edit
+#               manufacturer GET        /manufacturers/:id(.:format)       manufacturers#show
+#                            PUT        /manufacturers/:id(.:format)       manufacturers#update
+#                            DELETE     /manufacturers/:id(.:format)       manufacturers#destroy
+#                      rings GET        /rings(.:format)                   rings#index
 #                            POST       /rings(.:format)                   rings#create
 #                   new_ring GET        /rings/new(.:format)               rings#new
 #                  edit_ring GET        /rings/:id/edit(.:format)          rings#edit
