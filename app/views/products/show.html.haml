@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @product.name
+  %br
+  %b Manufacturers:
+  - @product.manufacturers.each do |manufacturer|
+    = manufacturer.name
+
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path

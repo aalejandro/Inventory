@@ -1,5 +1,7 @@
 Inventory::Application.routes.draw do
 
+  resources :products
+
   resources :manufacturers
 
   resources :rings
@@ -14,8 +16,15 @@ Inventory::Application.routes.draw do
   root :to => 'pages#home'
 end
 #== Route Map
-# Generated on 01 Jul 2012 12:53
+# Generated on 01 Jul 2012 14:19
 #
+#                            POST       /products(.:format)                products#create
+#                new_product GET        /products/new(.:format)            products#new
+#               edit_product GET        /products/:id/edit(.:format)       products#edit
+#                    product GET        /products/:id(.:format)            products#show
+#                            PUT        /products/:id(.:format)            products#update
+#                            DELETE     /products/:id(.:format)            products#destroy
+#              manufacturers GET        /manufacturers(.:format)           manufacturers#index
 #                            POST       /manufacturers(.:format)           manufacturers#create
 #           new_manufacturer GET        /manufacturers/new(.:format)       manufacturers#new
 #          edit_manufacturer GET        /manufacturers/:id/edit(.:format)  manufacturers#edit

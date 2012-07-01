@@ -1,14 +1,12 @@
-class Manufacturer < ActiveRecord::Base
-  attr_accessible :name
-  validates_presence_of :name
+require 'spec_helper'
 
-  #Model Relationships
-  belongs_to :product
+describe Product do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 
 # == Schema Information
 #
-# Table name: manufacturers
+# Table name: products
 #
 #  id         :integer         not null, primary key
 #  name       :string(255)

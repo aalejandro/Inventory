@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'activeadmin', '0.4.4'
+gem 'chosen-rails', '0.9.8'
 gem 'devise', '2.1.2'
 gem 'haml', '3.1.4'
 gem 'squeel', '1.0.0'
