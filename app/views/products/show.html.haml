@@ -4,9 +4,8 @@
   %br
   %b Manufacturers:
   %ul
-  - @product.manufacturers.each do |manufacturer|
-    %li= manufacturer.name
-
+    - @product.manufacturers.each do |manufacturer|
+      %li= manufacturer.name
 
 = link_to 'Edit', edit_product_path(@product)
 \|

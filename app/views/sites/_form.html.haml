@@ -1,0 +1,22 @@
+= form_for @site do |f|
+  -if @site.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@site.errors.count, "error")} prohibited this site from being saved:"
+      %ul
+        - @site.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :open_mobile_site_id
+    = f.number_field :open_mobile_site_id
+  .field
+    = f.label :direction
+    = f.text_field :direction
+  .field
+    = f.label :rings
+    = f.collection_select :ring_ids, Ring.order(:name), :id, :name, {}, {multiple: true, class: "chzn-select", "data-placeholder" => " "}
+  .actions
+    = f.submit 'Save'

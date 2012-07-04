@@ -1,0 +1,18 @@
+%p
+  %b Name:
+  = @site.name
+%p
+  %b Open mobile site:
+  = @site.open_mobile_site_id
+%p
+  %b Direction:
+  = @site.direction
+  %br
+  %b Rings:
+  %ul
+    - @site.rings.each do |ring|
+      %li= ring.name
+
+= link_to 'Edit', edit_site_path(@site)
+\|
+= link_to 'Back', sites_path

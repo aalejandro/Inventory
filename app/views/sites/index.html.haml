@@ -1,0 +1,23 @@
+%h1 Listing sites
+
+%table
+  %tr
+    %th Name
+    %th Open mobile site
+    %th Direction
+    %th
+    %th
+    %th
+
+  - @sites.each do |site|
+    %tr
+      %td= site.name
+      %td= site.open_mobile_site_id
+      %td= site.direction
+      %td= link_to 'Show', site
+      %td= link_to 'Edit', edit_site_path(site)
+      %td= link_to 'Destroy', site, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Site', new_site_path

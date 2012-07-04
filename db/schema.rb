@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120701184751) do
+ActiveRecord::Schema.define(:version => 20120704021248) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -69,11 +69,31 @@ ActiveRecord::Schema.define(:version => 20120701184751) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "ring_lists", :force => true do |t|
+    t.integer  "site_id"
+    t.integer  "ring_id"
+    t.string   "member_number"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "ring_lists", ["ring_id"], :name => "index_ring_lists_on_ring_id"
+  add_index "ring_lists", ["site_id", "ring_id"], :name => "index_ring_lists_on_site_id_and_ring_id", :unique => true
+  add_index "ring_lists", ["site_id"], :name => "index_ring_lists_on_site_id"
+
   create_table "rings", :force => true do |t|
     t.string   "name"
     t.string   "number"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "name"
+    t.integer  "open_mobile_site_id"
+    t.string   "direction"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "users", :force => true do |t|
