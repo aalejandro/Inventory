@@ -6,6 +6,9 @@ class Site < ActiveRecord::Base
   has_many :ring_lists, dependent: :destroy
   has_many :rings, through: :ring_lists
 
+  has_many :devices
+  has_many :products, through: :devices
+
   # Model Validations
   validates_presence_of :name
   validates :direction, inclusion: { in: %w(west east),

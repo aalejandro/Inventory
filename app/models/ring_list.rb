@@ -9,3 +9,16 @@ class RingList < ActiveRecord::Base
   # Model Validations
   validates_presence_of :site_id, :ring_id
 end
+
+# == Schema Information
+#
+# Table name: ring_lists
+#
+#  id            :integer         not null, primary key
+#  site_id       :integer
+#  ring_id       :integer
+#  member_number :string(255)
+#  created_at    :datetime        not null
+#  updated_at    :datetime        not null
+#
+

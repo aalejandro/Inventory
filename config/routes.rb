@@ -8,6 +8,8 @@ Inventory::Application.routes.draw do
 
   resources :rings
 
+  resources :devices
+
   devise_for :users, skip: :registrations
 
   ActiveAdmin.routes(self)
@@ -18,7 +20,7 @@ Inventory::Application.routes.draw do
   root :to => 'pages#home'
 end
 #== Route Map
-# Generated on 03 Jul 2012 20:55
+# Generated on 07 Jul 2012 16:25
 #
 #                            POST       /sites(.:format)                   sites#create
 #                   new_site GET        /sites/new(.:format)               sites#new
@@ -47,6 +49,13 @@ end
 #                       ring GET        /rings/:id(.:format)               rings#show
 #                            PUT        /rings/:id(.:format)               rings#update
 #                            DELETE     /rings/:id(.:format)               rings#destroy
+#                    devices GET        /devices(.:format)                 devices#index
+#                            POST       /devices(.:format)                 devices#create
+#                 new_device GET        /devices/new(.:format)             devices#new
+#                edit_device GET        /devices/:id/edit(.:format)        devices#edit
+#                     device GET        /devices/:id(.:format)             devices#show
+#                            PUT        /devices/:id(.:format)             devices#update
+#                            DELETE     /devices/:id(.:format)             devices#destroy
 #           new_user_session GET        /users/sign_in(.:format)           devise/sessions#new
 #               user_session POST       /users/sign_in(.:format)           devise/sessions#create
 #       destroy_user_session DELETE     /users/sign_out(.:format)          devise/sessions#destroy

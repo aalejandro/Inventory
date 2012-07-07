@@ -1,9 +1,13 @@
 class Product < ActiveRecord::Base
+
   attr_accessible :name, :manufacturer_ids
 
   # Model Relationships
   has_many :manufacturer_lists, dependent: :destroy
   has_many :manufacturers, through: :manufacturer_lists
+
+  has_many :devices
+  has_many :sites, through: :devices
 
   # Model Validations
   validates_presence_of :name
